@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalendarXamarin"
+             xmlns:calendar="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
+             x:Class="CalendarXamarin.MainPage">
+
+    <calendar:SfCalendar x:Name="calendar"
+                         DataSource="{Binding Appointments}"
+                         ShowInlineEvents="true"
+                         InlineViewMode="Agenda">
+        <calendar:SfCalendar.MonthViewSettings>
+            <calendar:MonthViewSettings AgendaSelectedDateColor="#889e81">
+            </calendar:MonthViewSettings>
+        </calendar:SfCalendar.MonthViewSettings>
+        <ContentPage.BindingContext>
+            <local:CalendarViewModel />
+        </ContentPage.BindingContext>
+    </calendar:SfCalendar>
+</ContentPage>
